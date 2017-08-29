@@ -56,7 +56,7 @@ LouvainPrimaryGeneratorAction::LouvainPrimaryGeneratorAction()
 //  fParticleGun  = new G4ParticleGun(n_particle);
  G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
  //  G4ParticleDefinition* particlen = particleTable -> FindParticle("neutron");
- G4ParticleDefinition* particlen = particleTable -> FindParticle("mu+");
+ G4ParticleDefinition* particlen = particleTable -> FindParticle("neutron");
 
  for ( G4int i=0; i<lnneutron; i++){
    fParticleGun[i]  = new G4ParticleGun(particlen,n_particle);
@@ -131,7 +131,7 @@ void LouvainPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
        //   ene = xxx;
        //     ene=150000.;  // constant for the moment to 150 GeV
      //   G4cout<<" Energy of muon   "<<ene<<G4endl;
-       fParticleGun[i]->SetParticleEnergy(150*GeV);
+       fParticleGun[i]->SetParticleEnergy(1*GeV);
    }
 
   //create vertex
